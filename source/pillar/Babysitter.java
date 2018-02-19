@@ -25,15 +25,29 @@ public class Babysitter {
 		}
 		
 		//calculate start to bedtime pay
-		startPay = (bedtime - start) * startRate;
+		//startPay = (bedtime - start) * startRate;
 		
-		//calculate bedtimePay
-		bedtimePay = (midnight - bedtime) * bedtimeRate;
-		
-		//calculate midnight to end pay
+		//calculate startPay when there is no bedtime
+		if (bedtime == 0) {
+			bedtimePay = 0;
+			startPay = (end - start) * startRate;
+		}
+		else {
+			//calculate start to bedtime pay
+			startPay = (bedtime - start) * startRate;
+			
+			//calculate bedtime pay
+			bedtimePay = (midnight - bedtime) * bedtimeRate;
+		}
+		//calculate midnight to end pay if after midnight
+		if (end <= 4) {
 		endtimePay = (end+24 - midnight) * endRate;
-		
+		}
+		else {
+			endtimePay = 0;
+		}
 		//calculate total night pay
+	
 		totalPay = endtimePay + bedtimePay + startPay;
 		
 		return totalPay;
