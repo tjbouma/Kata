@@ -12,8 +12,8 @@ public class BabysitterTest {
 		assertEquals(0, babysitter.calcTotalPay(12, 4, 0));
 	}
 	@Test 
-	public void whenStartingAt5pmAndBedtimeIs10pmCalculateStartPay() {
+	public void whenStartingAt5pmAndBedtimeIs10pmCalculateStartandBedtimePay() {
 		Babysitter babysitter = new Babysitter();
-		assertEquals(60, babysitter.calcTotalPay(17, 4, 22));
+		assertEquals(76, babysitter.calcTotalPay(17, 4, 22));
 	}
 }
