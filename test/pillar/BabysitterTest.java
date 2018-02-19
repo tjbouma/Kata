@@ -36,6 +36,16 @@ public class BabysitterTest {
 			System.out.println("Babysitter can't start before 5pm");
 		}
 	}
+	@Test
+	public void tryandCatchExceptionStayingAfter4am() {
+		Babysitter babysitter = new Babysitter();
+		try {
+			babysitter.calcTotalPay(17, 7, 22);
+		}
+		catch(Exception e) {
+			System.out.println("Babysitter can't stay after 4am");
+		}
+	}
 
 
 	

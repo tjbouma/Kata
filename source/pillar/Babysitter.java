@@ -19,8 +19,8 @@ public class Babysitter {
 		}
 		
 		catch(Exception e) {
-			//System.out.println("Babysitter can't start before 5pm");
-			//System.exit(1);
+			System.out.println("Babysitter can't start before 5pm");
+			System.exit(1);
 		}
 		/*
 		 * Babysitter can't stay passed 4am (4 on 24hr clock)
@@ -33,8 +33,8 @@ public class Babysitter {
 		}
 		
 		catch(Exception e) {
-			//System.out.println("Babysitter can't stay after 4am");
-			//System.exit(1);
+			System.out.println("Babysitter can't stay after 4am");
+			System.exit(1);
 		}
 
 		// calculate startPay when there is no bedtime
