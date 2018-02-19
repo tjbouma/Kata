@@ -4,9 +4,12 @@ public class Babysitter {
 	
 		int startRate = 12;
 		int bedtimeRate = 8;
+		int endRate = 16;
 		int midnight = 24;
 		int startPay;
 		int bedtimePay;
+		int endtimePay;
+		int totalPay;
 		
 		//Babysitter can't start before 5pm (17 on 24hr clock)
 		if (start < 17) {
@@ -27,6 +30,12 @@ public class Babysitter {
 		//calculate bedtimePay
 		bedtimePay = (midnight - bedtime) * bedtimeRate;
 		
-		return (startPay + bedtimePay);
+		//calculate midnight to end pay
+		endtimePay = (end+24 - midnight) * endRate;
+		
+		//calculate total night pay
+		totalPay = endtimePay + bedtimePay + startPay;
+		
+		return totalPay;
 	}
 }
