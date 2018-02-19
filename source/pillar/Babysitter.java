@@ -13,17 +13,28 @@ public class Babysitter {
 		int totalPay;
 
 		// Babysitter can't start before 5pm (17 on 24hr clock)
-		if (start < 17) {
-			return 0;
+		try {
+		if (start < 17)
+			throw new Exception();
 		}
-
+		
+		catch(Exception e) {
+			//System.out.println("Babysitter can't start before 5pm");
+			//System.exit(1);
+		}
 		/*
 		 * Babysitter can't stay passed 4am (4 on 24hr clock)
 		 * 
 		 * (end < 17) to ensure program runs when babysitter leaves before 1am
 		 */
-		if (end > 4 && end < 17) {
-			return 0;
+		try {
+		if (end > 4 && end < 17) 
+			throw new Exception();
+		}
+		
+		catch(Exception e) {
+			//System.out.println("Babysitter can't stay after 4am");
+			//System.exit(1);
 		}
 
 		// calculate startPay when there is no bedtime
