@@ -10,10 +10,10 @@ public class MainBabysitter {
 		
 		Scanner reader = new Scanner(System.in);
 		
-		System.out.println("Time should be rounded down to the closest hour. For example 5:35pm should be 17.\nEnter start time using 24hr clock: ");
+		System.out.println("Time should be rounded down to the closest hour. For example 5:35pm should be 17.\nEnter start time using 24 hr clock: ");
 		int start = reader.nextInt();
 		
-		System.out.println("Time should be rounded up to the closest hour. For example 10:27pm should be 23.\nEnter bedtime using 24 hr clock: ");
+		System.out.println("Time should be rounded up to the closest hour. For example 10:27pm should be 23.\nIf the child does not go to bed, Enter 0. \nEnter bedtime using 24 hr clock: ");
 		int bedtime = reader.nextInt();
 		
 		System.out.println("Time should be rounded up to the closest hour. For example 3:37am should be 4.\nEnter endtime using 24 hr clock: ");
