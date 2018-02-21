@@ -42,7 +42,7 @@ Time should be rounded to the closest hour. For example 5:35pm should be 17.
 Enter start time using 24 hr clock: <USER INPUTS START AS 17><ENTER>
 
 Time should be rounded up to the closest hour. For example 10:27pm should be 23.
-If the child does not go to bed, Enter 0.
+\nIf the child does not go to bed, Enter 0.
 Enter endtime using 24 hr clock: <USER INPUTS BEDTIME AS 23><ENTER>
   
 Time should be rounded up to the closest hour. For example 3:37am should be 4.
