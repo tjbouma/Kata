@@ -38,15 +38,15 @@ public class MainBabysitter {
 }
 
 # Outputs 
-Time should be rounded to the closest hour. For example 5:35pm should be 17.
-Enter start time using 24 hr clock: <USER INPUTS START AS 17><ENTER>
+Time should be rounded to the closest hour. For example 5:35pm should be 17.<br>
+Enter start time using 24 hr clock: <USER INPUTS START AS 17><ENTER><br>
 
-Time should be rounded up to the closest hour. For example 10:27pm should be 23.
-\nIf the child does not go to bed, Enter 0.
-Enter endtime using 24 hr clock: <USER INPUTS BEDTIME AS 23><ENTER>
+Time should be rounded up to the closest hour. For example 10:27pm should be 23.<br>
+If the child does not go to bed, Enter 0.<br>
+Enter endtime using 24 hr clock: <USER INPUTS BEDTIME AS 23><ENTER><br>
   
-Time should be rounded up to the closest hour. For example 3:37am should be 4.
-Enter endtime using 24 hr clock: <USER INPUTS BEDTIME AS 4><ENTER>
+Time should be rounded up to the closest hour. For example 3:37am should be 4.<br>
+Enter endtime using 24 hr clock: <USER INPUTS BEDTIME AS 4><ENTER><br>
 
 Total Night Pay: $<calcTotalPay(start, end, bedtime)>
 
@@ -57,8 +57,11 @@ bedtimePay(pay from bedtime to midnight), and endtimePay(pay from midnight to en
 when start = 17, end = 4, and bedtime = 23
 
 calcTotalPay(17, 4, 23);
+
 int startPay = (23 - 17) * 12;
+
 int bedtimePay = (24 - 23) * 8;
+
 int endtimePay = (4+24 - 24) * 16;
 
 totalPay = endtimePay + bedtimePay + startPay;
