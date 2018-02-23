@@ -72,7 +72,7 @@ Output from MainBabysitter
 
 Total Night Pay: $144
 
-# BabysitterTest.java 
+# BabysitterTest
 
 BabysitterTest is a JUnit test case used to test the functionality of the Babysitter.java class.<br>
 
@@ -154,7 +154,7 @@ Test method that sets the start to 5pm(17), there is no bedtime(0), and endtime 
 		}
 	}
 	
-Test method that checks the tests the try/catch exception in the function calcTotalPay(). When the test method trys start 12pm(12),<br> bedtime 10pm(22), and end 4am(4) the method catches the exception and outputs "Babysitter can't start before 5pm".
+Test method that checks the tests the try/catch exception in the function calcTotalPay(). When the test method trys start 12pm(12), bedtime 10pm(22), and end 4am(4) the method catches the exception and outputs "Babysitter can't start before 5pm".
 
 @Test
 
