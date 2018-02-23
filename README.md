@@ -1,15 +1,15 @@
 # Babysitter
 This kata simulates a babysitter working and getting paid for one night. The rules are pretty straight forward:
 
-The babysitter
+The babysitter:
 
-starts no earlier than 5:00PM
-leaves no later than 4:00AM
-gets paid $12/hour from start-time to bedtime
-gets paid $8/hour from bedtime to midnight
-gets paid $16/hour from midnight to end of job
-gets paid for full hours (no fractional hours)
-Feature: As a babysitter In order to get paid for 1 night of work I want to calculate my nightly charge
+starts no earlier than 5:00PM<br>
+leaves no later than 4:00AM<br>
+gets paid $12/hour from start-time to bedtime<br>
+gets paid $8/hour from bedtime to midnight<br>
+gets paid $16/hour from midnight to end of job<br>
+gets paid for full hours (no fractional hours)<br>
+Feature: As a babysitter In order to get paid for 1 night of work I want to calculate my nightly charge<br>
 
 # Usage main method
 The main method asks the user to input the time they start babysitting, the time the child went to bed, and the time they left.
@@ -71,3 +71,87 @@ return totalPay;
 Output from MainBabysitter 
 
 Total Night Pay: $144
+
+# BabysitterTest.java 
+
+BabysitterTest is a JUnit test case used to test the functionality of the Babysitter.java class.<br>
+
+The tests were built using Maven as the build tool and Eclipse as the IDE. <br>
+The following libraries are required:<br>
+JRE System Library [JavaSE - 1.8]<br>
+ resources.jar<br>
+ rt.jar<br>
+ jsse.jar<br>
+ jce.jar<br>
+ charsets.jar<br>
+ jfr.jar<br>
+ access-bridge-64.jar<br>
+ cldrdata.jar<br>
+ dnsns.jar<br>
+ jaccess.jar<br>
+ jfxrt.jar<br>
+ localedata.jar<br>
+ nashorn.jar<br>
+ sunec.jar<br>
+ sunjce_provider.jar<br>
+ sunmscapi.jar<br>
+ sunpkcs11.jar<br>
+ zipfs.jar<br>
+JUnit 4<br>
+ junit.jar<br>
+ org.j=hamcrest.core_1.3.0.v201303031735.jar<br>
+ 
+# Methods:
+@Before
+	public void setUp() {
+		babysitter = new Babysitter();
+	}
+The Before method creates a new object of the Babysitter class. This method must be created to run multiple tests without created a new object for each test. 
+
+@Test 
+	public void whenStartingAt5pmAndBedtimeIs10pmAndLeaveAt4amCalculateTotalPay() {
+		assertEquals(140, babysitter.calcTotalPay(17, 4, 22));
+	}
+Test method that sets start to 5pm(17), bedtime to 10pm(22), and end to 4am(4). Checks to see that the method returns 140.
+
+@Test
+	public void whenStartingAt5pmBedtimeIs9pmLeaveAtMidnight() {
+		assertEquals(72, babysitter.calcTotalPay(17, 24, 21));
+	}
+Test method that sets the start to 5pm(17), bedtime to 9pm(21), and end at midnight(24). Checks to see that the method returns 72.
+
+@Test
+	public void whenStartingAt6pmAndLeavingAt9pmNoBedtime() {
+		assertEquals(36, babysitter.calcTotalPay(18, 21, 0));
+	}
+Test method that sets the start to 6pm(18), there is no bedtime(0), and end at 9pm(21). Checks to see that the method returns 36.
+
+@Test
+	public void whenStartingAt5pmAndLeaveAt4amNoBedtime() {
+		assertEquals(148, babysitter.calcTotalPay(17, 4, 0));
+	}
+Test method that sets the start to 5pm(17), there is no bedtime(0), and endtime is 4am(4). Checks to see that the method returns 148.
+
+@Test
+
+	public void tryAndCatchExceptionStartingBefore5pm() throws Exception {
+		try {
+			babysitter.calcTotalPay(12, 4, 22);
+		}
+		catch(Exception e) {
+			System.out.println("Babysitter can't start before 5pm");
+		}
+	}
+Test method that checks the tests the try/catch exception in the function calcTotalPay(). When the test method trys start 12pm(12),<br> bedtime 10pm(22), and end 4am(4) the method catches the exception and outputs "Babysitter can't start before 5pm".
+
+@Test
+	public void tryandCatchExceptionStayingAfter4am() throws Exception {
+		try {
+			babysitter.calcTotalPay(17, 7, 22);
+		}
+		catch(Exception e) {
+			System.out.println("Babysitter can't stay after 4am");
+		}
+	}
+Test method that checks the tests another try/catch exception in the function calcTotalPay(). When the test method trys start<br> at 5pm(17), bedtime 10pm(22), and end 7am(7) the method catches the exception and outputs "Babysitter can't stay after 4am".
+
