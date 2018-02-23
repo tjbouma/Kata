@@ -78,6 +78,7 @@ BabysitterTest is a JUnit test case used to test the functionality of the Babysi
 
 The tests were built using Maven as the build tool and Eclipse as the IDE. <br>
 The following libraries are required:<br>
+
 JRE System Library [JavaSE - 1.8]<br>
 * resources.jar<br>
 * rt.jar<br>
@@ -97,6 +98,7 @@ JRE System Library [JavaSE - 1.8]<br>
 * sunmscapi.jar<br>
 * sunpkcs11.jar<br>
 * zipfs.jar<br>
+
 JUnit 4<br>
 * junit.jar<br>
 * org.j=hamcrest.core_1.3.0.v201303031735.jar<br>
